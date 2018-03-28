@@ -13,10 +13,21 @@ while playing == 1:
 	word = word.upper()
 	clear()
 	print("Hangman™\n")
-	print("A word consisting of {} letters has been chosen. Good luck!".format(len(word)))
+	
 	lives = 6
 	s = "-" * len(word)
 	letters = []
+	i = 0
+	while i < len(word):
+		if word[i].upper() == " ":
+			multip = 1
+			s = s[:i]+" "+s[(i+1):]
+		i += 1
+	a = s
+	for x in a:
+		if x == " ":
+			a = a.replace(x,"")	
+	print("A word consisting of {} letters has been chosen. Good luck!".format(len(a)))	
 	while lives != 0 and s != word:
 		print("Word: {}".format(s))
 		letter = input("Pick a letter: ")
@@ -41,7 +52,10 @@ while playing == 1:
 	else:
 		clear()
 		print("Hangman™\n")
-		print("Whoever picked that word, your moms a hoe. GG.\nThe word was {}".format(og_word))
+		if multip != 1:
+			print("Whoever picked that word, your moms a hoe. GG.\nThe word was {}".format(og_word))
+		else:
+			print("Whoever picked those words, your moms a hoe. GG.\nThe words was {}".format(og_word))	
 
 	while fin == 0:	
 		playing = input("Play again? Yes|No : ")
@@ -66,7 +80,6 @@ while playing == 1:
 			print("Ur mom gay.")
 
 		
-
 
 
 
