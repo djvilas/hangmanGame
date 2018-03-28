@@ -1,4 +1,4 @@
-import os
+import os, getpass
 clear = lambda: os.system('clear')
 clear()
 playing = 1
@@ -7,7 +7,8 @@ ll = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 while playing == 1:
 	fin = 0
 	print("Hangman™\n")
-	word = input("Enter a word: ")
+	# word = input("Enter a word: ")
+	word = getpass.getpass("Enter a word: ")
 	og_word = word
 	word = word.upper()
 	clear()
