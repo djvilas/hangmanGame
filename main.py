@@ -3,13 +3,14 @@ clear = lambda: os.system('clear')
 clear()
 playing = 1
 tries = 0
+multip = 0
 ll = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 while playing == 1:
 	fin = 0
 	print("Hangman™\n")
 	# word = input("Enter a word: ")
 	word = getpass.getpass("Enter a word: ")
-	word = word.capitalize()
+	word = word.capitalize().strip()
 	clear()
 	print("Hangman™\n")
 	
@@ -27,7 +28,8 @@ while playing == 1:
 		if x == " ":
 			a = a.replace(x,"")	
 	print("A word consisting of {} letters has been chosen. Good luck!".format(len(a)))	
-	while lives != 0 and s != word:
+	#while lives != 0 and s != word:
+	while lives != 0 and "-" in s:
 		print("Word: {}".format(s))
 		letter = input("Pick a letter: ")
 		while letter.upper() in letters or len(letter) != 1 or letter.upper() not in ll:
@@ -52,9 +54,9 @@ while playing == 1:
 		clear()
 		print("Hangman™\n")
 		if multip != 1:
-			print("Whoever picked that word, your moms a hoe. GG.\nThe word was {}".format(word))
+			print("Whoever picked that word, congratulations you played yourself. GG.\nThe word was {}".format(word))
 		else:
-			print("Whoever picked those words, your moms a hoe. GG.\nThe words was {}".format(word))	
+			print("Whoever picked those words, congratulations you played yourself. GG.\nThe words were {}".format(word))	
 
 	while fin == 0:	
 		playing = input("Play again? Yes|No : ")
@@ -62,12 +64,12 @@ while playing == 1:
 			fin = 1
 			playing = 1
 		elif playing.lower() != "yes" and playing.lower() != "no" :
-			print("Are you retarded?")
+			print("{} is not a valid option, dummy.".format(playing.strip()))
 			tries += 1
 			if tries == 3:
 				clear()
 				print("Hangman™\n")
-				print("Fuck off, retard.")
+				print("Think you're being funny, do ya?")
 				playing = 0
 				fin = 1
 
@@ -76,9 +78,9 @@ while playing == 1:
 			fin = 1
 			clear()
 			print("Hangman™\n")
-			print("Ur mom gay.")
+			print("Whatever, never liked you anyway.")
 
-		
+		#How do I get rid of whitespace to the left of a string?
 
 
 
