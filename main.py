@@ -9,7 +9,6 @@ while playing == 1:
 	print("Hangman™\n")
 	# word = input("Enter a word: ")
 	word = getpass.getpass("Enter a word: ")
-	og_word = word
 	word = word.upper()
 	clear()
 	print("Hangman™\n")
