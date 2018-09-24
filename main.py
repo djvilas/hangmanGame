@@ -9,7 +9,7 @@ while playing == 1:
 	print("Hangman™\n")
 	# word = input("Enter a word: ")
 	word = getpass.getpass("Enter a word: ")
-	word = word.upper()
+	word = word.capitalize()
 	clear()
 	print("Hangman™\n")
 	
@@ -47,14 +47,14 @@ while playing == 1:
 	if lives == 0:
 		clear()
 		print("Hangman™\n")
-		print("You suck, pleb.\nThe word was {}".format(og_word))
+		print("You suck, pleb.\nThe word was {}".format(word))
 	else:
 		clear()
 		print("Hangman™\n")
 		if multip != 1:
-			print("Whoever picked that word, your moms a hoe. GG.\nThe word was {}".format(og_word))
+			print("Whoever picked that word, your moms a hoe. GG.\nThe word was {}".format(word))
 		else:
-			print("Whoever picked those words, your moms a hoe. GG.\nThe words was {}".format(og_word))	
+			print("Whoever picked those words, your moms a hoe. GG.\nThe words was {}".format(word))	
 
 	while fin == 0:	
 		playing = input("Play again? Yes|No : ")
